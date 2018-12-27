@@ -1,0 +1,42 @@
+import random
+a = range(1, 10)
+new_list = []
+check = random.choice(a)
+j = 0
+p = 0
+print('Try to find the number i got between 1 and 9')
+while p == 0:
+    while j == 0:
+        b = str(input('Do you wanna play ?\nyes or no ?\n'))
+        if b == 'yes':
+            choice = input('Type the number do you think i got:')
+            j = 1
+            new_list.append(choice)
+        elif b == 'no':
+            p = -1
+            break
+        else:
+            print('Answer not valid')
+    while j == 1:
+        if str.isnumeric(choice) == False:
+            print('Are you idiot ?')
+        else:
+            choice = int(choice)
+            j = 2
+while j == 2:
+    if choice == check:
+        print('You are right the number i got was {}'.format(check))
+        print('The number of times you tried was {}'.format(len(new_list)))
+        j = 0
+    elif(choice == check + 1)or(choice == check - 1):
+        choice = int(input('you almost got it try again:'))
+        new_list.append(choice)
+    elif(choice == check + 2)or(choice == check - 2):
+        choice = int(input('You are near try again:'))
+        new_list.append(choice)
+    elif choice < check:
+        choice = int(input('Too low try again:'))
+        new_list.append(choice)
+    elif choice > check:
+        choice = int(input('Too high try again:'))
+        new_list.append(choice)
