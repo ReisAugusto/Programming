@@ -10,7 +10,7 @@ while p == 0:
         b = str(input('Do you wanna play ?\nyes or no ?\n'))
         if b == 'yes':
             choice = input('Type the number do you think i got:')
-            j = 1
+            j = 2
             new_list.append(choice)
         elif b == 'no':
             p = -1
@@ -23,20 +23,21 @@ while p == 0:
         else:
             choice = int(choice)
             j = 2
-while j == 2:
-    if choice == check:
-        print('You are right the number i got was {}'.format(check))
-        print('The number of times you tried was {}'.format(len(new_list)))
-        j = 0
-    elif(choice == check + 1)or(choice == check - 1):
-        choice = int(input('you almost got it try again:'))
-        new_list.append(choice)
-    elif(choice == check + 2)or(choice == check - 2):
-        choice = int(input('You are near try again:'))
-        new_list.append(choice)
-    elif choice < check:
-        choice = int(input('Too low try again:'))
-        new_list.append(choice)
-    elif choice > check:
-        choice = int(input('Too high try again:'))
-        new_list.append(choice)
+    while j == 2:
+        choice = int(choice)
+        if choice == check:
+            print('You are right the number i got was {}'.format(check))
+            print('The number of times you tried was {}'.format(len(new_list)))
+            j = 0
+        elif(choice == check + 1)or(choice == check - 1):
+            choice = int(input('you almost got it try again:'))
+            new_list.append(choice)
+        elif(choice == check + 2)or(choice == check - 2):
+            choice = int(input('You are near try again:'))
+            new_list.append(choice)
+        elif choice < check:
+            choice = int(input('Too low try again:'))
+            new_list.append(choice)
+        elif choice > check:
+            choice = int(input('Too high try again:'))
+            new_list.append(choice)
