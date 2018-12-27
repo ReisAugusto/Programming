@@ -1,0 +1,10 @@
+a = 1
+while True:
+    check = []
+    b = range(2, a)
+    for j in b:
+        if a % j == 0:
+            check.append(j)
+    if check == []:
+        print(a)
+    a = a + 1
